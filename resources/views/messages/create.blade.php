@@ -13,7 +13,9 @@
                     <label for="users-select">
                         <select id="to" name="to" class="form-control">
                             @foreach ($users as $user)
-                            <option value="{{$user->id}}">{{$user->name}}</option>
+                                @if($user->id!==Auth::id())
+                                <option value="{{$user->id}}">{{$user->name}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </label>

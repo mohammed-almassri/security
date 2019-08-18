@@ -27,10 +27,11 @@
 
 <body>
     <div id="app">
+        @if(Auth::check())
         <div class="vertical-nav bg-white" id="sidebar">
             <div class="py-4 px-3 mb-4 bg-light">
                 <div class="media d-flex align-items-center">
-                    <img src="{{ asset('123.jpg') }}" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+                    <img src="{{ ord(Auth::user()->name)%2==0?asset('123.jpg'):asset('321.jpg') }}" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
                     <div class="media-body">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <h4 class="m-0 username">{{ Auth::user()->name }}</h4> <span class="caret"></span>
@@ -79,7 +80,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link text-dark font-italic bg-light">
                         <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                        Mohammed M. Al M'ass'ry
+                        Mohammed M. AlMassri
                     </a>
                 </li>
                 <li class="nav-item">
@@ -88,9 +89,15 @@
                         Abdelrahman Y. Lulu
                     </a>
                 </li>
+                <li class="nav-item">
+                        <a href="https://www.instagram.com/baraamukayed98/" class="nav-link text-dark font-italic bg-light">
+                            <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                            Baraa Mukayed
+                        </a>
+                    </li>
             </ul>
         </div>
-
+        @endif
         <main class="py-4">
             @foreach (['danger', 'warning', 'success', 'info'] as $msg)
             @if(Session::has('alert-' . $msg))
