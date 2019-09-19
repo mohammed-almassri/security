@@ -63,7 +63,7 @@
                                     </a>
                                 @endif
                                 <a class="btn btn-link" href="{{ route('register') }}">
-                                        Register instread?
+                                        Register instead?
                                     </a>
                             </div>
                         </div>
