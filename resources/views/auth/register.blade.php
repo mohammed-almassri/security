@@ -68,7 +68,7 @@
                                 </button>
                             </div>
                             <a class="btn btn-link" href="{{ route('login') }}">
-                                    login instread?
+                                    login instead?
                                 </a>
                         </div>
                         
